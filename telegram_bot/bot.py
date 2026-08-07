@@ -5,9 +5,9 @@ import os
 TOKEN = os.getenv("8875824495:AAGcaII9dC54zhTvfgbxCsgj7JIizZpThjc")
 
 bot = Bot(token=TOKEN)
-dp = Dispatcher()
+dp = Dispatcher(bot)
 
-@dp.message()
+@dp.message_handler()
 async def echo(message: types.Message):
     await message.answer(f"Ты сказал: {message.text}")
 
