@@ -2,12 +2,12 @@ from aiogram import Bot, Dispatcher, types
 import asyncio
 import os
 
-TOKEN = os.getenv("8875824495:AAGcaII9dC54zhTvfgbxCsgj7JIizZpThjc")
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 bot = Bot(token=TOKEN)
-dp = Dispatcher(bot)
+dp = Dispatcher()
 
-@dp.message_handler()
+@dp.message()
 async def echo(message: types.Message):
     await message.answer(f"Ты сказал: {message.text}")
 
